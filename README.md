@@ -19,4 +19,7 @@ Demo API is also available at,
 * Add relevant security setup as needed, basic authentication setup is done in `application-qa.properties` property file 
 
 
+`mvn package` creates jar at `./target/metadata-service.jar`
+
+
 
