@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: metadata-service-pod
   labels:
-        app: metadata-servcie
+        app: metadata-servcie1
 spec:
   containers:
   - name: metadata-service-pod
