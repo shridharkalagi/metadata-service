@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mondo-replica-set
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: mongo-db-replica-set
+  template:
+    metadata:
+      labels:
+        app: mongo-db-replica-set
+    spec:
+      containers:
+      - name: mongo-db-pod
+        image: mongo
+        ports:
+          - containerPort: 27017
+    
