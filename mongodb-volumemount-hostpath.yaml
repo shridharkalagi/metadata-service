@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mondo-replica-set
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: mongo-db-replica-set
+  template:
+    metadata:
+      labels:
+        app: mongo-db-replica-set
+    spec:
+      containers:
+      - name: mongo-db-pod
+        image: mongo
+        volumeMounts:
+          - mountPath: /data/db
+            name: db-volume
+        ports:
+          - containerPort: 27017
+      volumes:
+        - name: db-volume
+          hostPath: 
+            path: /data/mongo-db-data
+            type: Directory
+      
